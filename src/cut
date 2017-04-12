@@ -1,0 +1,81 @@
+			/*
+	        BufferedReader br=new BufferedReader(new FileReader(file));
+	        String temp = null;
+	        String temp_all = null;
+	        StringBuffer sb=new StringBuffer();
+            int	line = 0;
+
+            while ((temp = br.readLine()) != null) {
+	        	//System.out.println(temp.length());
+	        	//temp = br.readLine();
+	        	line ++;
+	        	//temp_all = temp_all + temp; 
+	        }
+
+	        //System.out.println(temp_all.length());
+	        System.out.println(line);
+	        		
+	        br.close();
+	        */
+			
+			/*
+			int length = 0;
+	        Reader reader = null;
+	        try {
+	            System.out.println("以字符为单位读取文件内容，一次读一个字节：");
+	            // 一次读一个字符
+	            reader = new InputStreamReader(new FileInputStream(file));
+	            int tempchar;
+	            while ((tempchar = reader.read()) != -1) {
+	                // 对于windows下，\r\n这两个字符在一起时，表示一个换行。但如果这两个字符分开显示时，会换两次行。因此，屏蔽掉\r，或者屏蔽\n。否则，将会多出很多空行。
+	                //if (((char) tempchar) != '\r') {
+	                //    System.out.print((char) tempchar);
+	                //}
+	            	length++;
+	            }
+	            System.out.println(length);
+	            
+	            reader.close();
+	            
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        */
+			
+			/*
+			Reader reader = null;
+			try {
+	            System.out.println("以字符为单位读取文件内容，一次读多个字节：");
+	            // 一次读多个字符
+	            char[] tempchars = new char[1023];
+	            int charread = 0;
+	            reader = new InputStreamReader(new FileInputStream(file));
+	            // 读入多个字符到字符数组中，charread为一次读取字符数
+	            while ((charread = reader.read(tempchars)) != -1) {
+	                // 同样屏蔽掉\r不显示
+	                if ((charread == tempchars.length)
+	                        && (tempchars[tempchars.length - 1] != '\r')) {
+	                    System.out.print(tempchars);
+	                } else {
+	                    for (int i = 0; i < charread; i++) {
+	                        if (tempchars[i] == '\r') {
+	                            continue;
+	                        } else {
+	                            System.out.print(tempchars[i]);
+	                        }
+	                    }
+	                }
+	            }
+
+	        } catch (Exception e1) {
+	            e1.printStackTrace();
+	        } finally {
+	            if (reader != null) {
+	                try {
+	                    reader.close();
+	                } catch (IOException e1) {
+	                }
+	            }
+	        }
+	        */
+	        
