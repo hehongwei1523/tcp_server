@@ -14,7 +14,7 @@ import dfu.dfuThread;
 public class Tcp_Server {
 	
     //public static final String SERVER_ADDR = "192.168.1.133";
-    public static final String SERVER_PORT = "8888";
+    public static final String SERVER_PORT = "5000";
     
     public static ServerSocket serverSocket;
     public static Socket socket;
@@ -74,6 +74,10 @@ public class Tcp_Server {
             	{
             		dfu = new dfuThread(this.dfu_lock);
             		dfu.start();
+            		
+            		//启动线程，等待10ms后，开始发送数据
+            		dfu.sleep(10);
+            		dfu.method_notify();
             	}
             	
             	//接收到dfu开始发送的命令，启动线程
