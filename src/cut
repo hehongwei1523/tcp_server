@@ -130,3 +130,36 @@
 	        }
 		    			
 		}
+		
+	            /*
+	            System.out.println(new Date());
+	            this.sleep(3000);
+	            System.out.println(new Date());
+	            //文件传输完成后，发送一串特殊数据
+
+          	    for(int i = 0; i < 10; i++){
+        		  outputStream.write(0xaa);
+        	    }           
+	            //Tcp_Server.get_Socket().close(); 
+	            */
+	            
+				/*
+            	if(System.currentTimeMillis() - start_time > 20000)
+            	{
+            		System.out.println("timeout socket close!");
+            		Tcp_Server.get_Socket().close();
+            	}
+            	*/
+            	
+            
+            /*
+            OutputStream outputStream = socket.getOutputStream();//获取一个输出流，向客户端发送信息
+            PrintWriter printWriter = new PrintWriter(outputStream);//将输出流包装成打印流
+            printWriter.print("你好，服务端已关闭");
+            printWriter.flush();
+            socket.shutdownOutput();//关闭输出流
+            
+            //关闭相对应的资源
+            printWriter.close();
+            outputStream.close();
+            */            		            		
